@@ -9,9 +9,28 @@ class Node{
 		};
 
 	Node *input(Node* head, int d){
-		cin >> temp;
-		head = input(head;temp);
+// 		cin >> temp;
+// 		head = input(head;temp);
+        Node*ptr = head;
+        Node *temp = new Node();
+        temp -> next = temp;
+        
+        while(ptr -> next != NULL){
+            ptr = ptr -> next;
+        }
+        // ptr -> data = d;
+        // ptr -> next = NULL;
+        ptr -> next = temp;
+        
+        return head;
 	}
+
+void printList(Node*root){
+    while(root != NULL){
+        cout << root -> data << " ";
+        root = root -> next;
+    }
+}
 
 int main(){
 	Node *head = NULL;
@@ -30,22 +49,20 @@ int main(){
 	
 	second -> data = 3;
 	second -> next = NULL;
-	 
+	 int n;
+// 	 int temp;
 	cout << "enter number of element is a list " << endl;
 	cin >> n;
 	cout << "enter elements " << endl;
-	cin >> int temp;
+	int temp;
 	cin >> temp;
 	head = new Node();
 	head -> data = temp;
 	head -> next = NULL;
-	fir(int i=0; i<n-1; i++){
-		
+	for(int i=0; i<n-1; i++){
+		cin >> temp;
+		head = input (head,temp);
 	}
-	
-	
-	
-	
-	
+
 	return 0;	
 }
